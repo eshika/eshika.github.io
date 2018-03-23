@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="./assets/img/kit/free/apple-icon.png">
+    <link rel="icon" href="./assets/img/kit/free/favicon.png">
+    <title>
+        HemaCam
+    </title>
+    <!--     Fonts and icons     -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./assets/css/material-kit.css?v=2.0.2">
+    <!-- Documentation extras -->
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link href="./assets/assets-for-demo/demo.css" rel="stylesheet" />
+    <!-- iframe removal -->
+</head>
+
+<body class="index-page " style="height:200px">
+     <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
+        <div class="container">
+            <div class="navbar-translate">
+                <a class="navbar-brand" href="./index.html">HemaCam </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="index.html" target="_self">
+                            <i class="material-icons">home</i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="history.html" target="_self">
+                            <i class="material-icons">history</i> History
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/eshika/HemaCam-Images" target="_blank">
+                            <i class="material-icons">cloud_download</i> Download
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('http://www.ykassd.com/wp-content/uploads/2014/09/Blood-Cells-2.jpg');">
+        <div class="main main-raised" style="height: 85%; margin: 60px 30px 0px;">
+            <div class="section section-basic" style="height: 100%; padding: 30px 0px;">
+                <div class="container" style="height: 100%;">
+                    <h3 style='text-align: center; margin-top: 0px; margin-bottom: 0px'>Cell Analysis Summary</h3>
+
+                    <!--         carousel  -->
+                    <!-- <div class="section" id="carousel"> -->
+                        <!-- <div class="container"> -->
+                            <!-- <div class="row"> -->
+                                <!-- <div class="col-md-8 mr-auto ml-auto"> -->
+                                    <!-- Carousel Card -->
+                                    <div class="card card-raised card-carousel" style="height: 88%; margin-top: 15px; margin-bottom: 0px">
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="height: 100%">
+                                        
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active"><h4>01.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>02.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>03.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>04.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>05.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>06.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>07.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>08.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>09.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>10.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>Sickle1.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>Sickle2.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item"><h4>Sickle3.jpg</h4>
+                                                    <div class = "row" style="padding-bottom: 15px">
+                                                        <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+                                                    </div>
+                                                    <div class="row" style = "padding-bottom: 15px">
+                                                        <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                                <i class="material-icons" style="color: black">keyboard_arrow_left</i>
+                                                <span class="sr-only">Previous</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                                <i class="material-icons" style="color: black">keyboard_arrow_right</i>
+                                                <span class="sr-only">Next</span>
+                                            </a>
+                                        </div>
+                                    <!-- </div> -->
+                                    <!-- End Carousel Card -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                    </div>
+                    <!--         end carousel -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--   Core JS Files   -->
+    <script src="./assets/js/core/jquery.min.js"></script>
+    <script src="./assets/js/core/popper.min.js"></script>
+    <script src="./assets/js/bootstrap-material-design.js"></script>
+    <!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+    <script src="./assets/js/plugins/moment.min.js"></script>
+    <!--    Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+    <script src="./assets/js/plugins/bootstrap-datetimepicker.min.js"></script>
+    <!--    Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+    <script src="./assets/js/plugins/nouislider.min.js"></script>
+    <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+    <script src="./assets/js/material-kit.js?v=2.0.2"></script>
+    <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+    <script src="./assets/assets-for-demo/js/material-kit-demo.js"></script>
+    <script>
+
+        function getURLParameter(name) {
+          return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+      }
+
+      function showDetails(){
+        $('.active #details').toggle()
+        if ($('.active #details_button').text() == "Show Details") {
+            $('.active #details_button').text("Hide Details");
+        } else {
+            $('.active #details_button').text("Show Details")
+        }
+    }
+
+    function loadData(i, obj) {
+        id = $(obj).find('h4').text()
+        $(obj).find('h4').css('text-align', 'center')
+        $(obj).find('#cell').attr("src", id)
+        filename = id.substr(0, id.indexOf('.'))
+          $(obj).find("#details").load("https://raw.githubusercontent.com/eshika/eshika.github.io/master/"+filename+"_data_results.html", 
+            function(){
+                $(obj).find(".dataframe").css({
+                    "margin": "0 auto",
+                    "text-align": "center"
+                });
+            });
+    }
+
+    $(document).ready(function() {
+
+            //init DateTimePickers
+            materialKit.initFormExtendedDatetimepickers();
+            $('.carousel-item').each(function(i, obj) {
+                loadData(i, obj);
+            })
+
+
+        });
+
+    </script>
+</body>
+
+</html>
