@@ -21,7 +21,7 @@
     <!-- iframe removal -->
 </head>
 
-<body class="index-page ">
+<body class="index-page " style="height:200px">
     <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
         <div class="container">
             <div class="navbar-translate">
@@ -72,44 +72,18 @@
         </div>
     </nav>
     <div class="page-header header-filter clear-filter purple-filter" data-parallax="true" style="background-image: url('http://www.ykassd.com/wp-content/uploads/2014/09/Blood-Cells-2.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ml-auto mr-auto">
-                    <div class="brand">
-                        <h2>Welcome to</h2>
-                        <h1 style='margin-top:0px; margin-bottom:20px'>HemaCam</h1>
-                        <h3>Upload an image to begin</h3>
-                        
-                        <button class="btn btn-info btn-round" data-toggle="modal" data-target="#myModal" style='margin-top:20px'>
-                            <i class="material-icons">file_upload</i> Upload Image
-                        </button>       
-                    </div>
-                </div>
-            </div>
+        <div class="main main-raised" style="height: 85%; margin: 60px 30px 0px;">
+        <div class="section section-basic" style="height: 100%; padding: 30px 0px;">
+        <div class="container" style="height: 100%">
+            <h3 style='text-align: center'>Cell Analysis Summary</h3>
+            <img id="cell", style='margin:0px auto'>
+            <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute;"></div>
+        </div>
+    </div>
         </div>
     </div>
 
-    <!-- Classic Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Select an Image</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <i class="material-icons">clear</i>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <input id="uploadPicture" type="file" accept="image/*">
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-link" onclick='analyze()'>Analyze</button>
-                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--  End Modal -->
+
 
     <!--   Core JS Files   -->
     <script src="./assets/js/core/jquery.min.js"></script>
@@ -126,25 +100,29 @@
     <!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
     <script src="./assets/assets-for-demo/js/material-kit-demo.js"></script>
     <script>
+
+        function getURLParameter(name) {
+              return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
+            }
+
         $(document).ready(function() {
 
             //init DateTimePickers
             materialKit.initFormExtendedDatetimepickers();
+            id = getURLParameter("id")
+            $('#cell').attr("src", id)
+            filename = id.substr(0, id.indexOf('.'))
+            $(function(){
+              $("#details").load("https://raw.githubusercontent.com/eshika/eshika.github.io/master/"+filename+"_data_results.html", 
+                function(){
+                    $(".dataframe").css("margin", "0 auto"); 
+                });
+              
+            });
+
 
         });
 
-        function analyze(){
-            fullPath = $("#uploadPicture").val();
-            if (fullPath) {
-                var startIndex = (fullPath.indexOf('\\') >= 0 ? fullPath.lastIndexOf('\\') : fullPath.lastIndexOf('/'));
-                var filename = fullPath.substring(startIndex);
-                if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
-                    filename = filename.substring(1);
-                }
-                window.open ('progress.html?id='+String(filename),'_self',false);
-            }
-            
-        }
     </script>
 </body>
 
