@@ -85,8 +85,8 @@
                     <input id="uploadPicture" type="file" accept="image/*">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-link" onclick='analyze()'>Analyze</button>
-                    <button type="button" class="btn btn-danger btn-link" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn " onclick='analyze()'><b>Analyze</b></button>
                 </div>
             </div>
         </div>
@@ -123,7 +123,7 @@
                 if (filename.indexOf('\\') === 0 || filename.indexOf('/') === 0) {
                     filename = filename.substring(1);
                 }
-                window.open ('progress.html?id='+String(filename),'_self',false);
+                window.open ('progress1.html?id='+String(filename),'_self',false);
             }
             
         }
