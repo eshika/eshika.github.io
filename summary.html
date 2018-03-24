@@ -58,18 +58,21 @@
         <div class="section section-basic" style="height: 100%; padding: 30px 0px;">
         <div class="container" style="height: 100%;">
             <!-- <div class="row"> -->
-            <h3 style='text-align: center'>Cell Analysis Summary</h3>
+            <h3 style='text-align: center; margin-top: 0px'>Cell Analysis Summary</h3>
         <!-- </div> -->
-        <div class = "row" style="padding-bottom: 15px">
-            <img id="cell", style='margin:0px auto; height: 200px' class='img-raised'>
+        <div class = "row" style="padding-bottom: 10px">
+            <img id="cell", style='margin:0px auto; height: 180px' class='img-raised'>
         </div>
-        <div class="row" style = "padding-bottom: 15px">
+        <div class="row" style = "padding-bottom: 10px">
             <div class="container" id="summary" class="cd-section"></div>
         </div>
-        <div class="row" style = "padding-bottom: 15px">
+        <div class="row" style = "padding-bottom: 10px; text-align: center;">
+            <div class="container" id="rec" class="cd-section" style="border:1px solid darkgray; width: 250px; border-radius: 3px; padding: 5px 0px; background-color: lightgray"></div>
+        </div>
+        <div class="row" style = "padding-bottom: 0px">
             <button id="details_button" class="btn btn-primary" style='margin:0px auto;' onclick="showDetails()">Show Details</button>
         </div>
-        <div class="row">
+        <div class="row" style = "padding-top: 10px">
             <div class="container" id="details" class="cd-section" style="overflow-y: scroll; position: absolute; display: none"></div>
         </div>
         </div>
@@ -126,7 +129,7 @@
                 function(){
                     $(".dataframe").css({
                         "margin": "0 auto",
-                        "text-align": "left"
+                        "text-align": "center"
                     });
                     $("tbody tr th").css({
                         "display": "none"
@@ -134,11 +137,18 @@
                     $("thead tr th:first-child").css({
                         "display": "none"
                     });
-                    $('tr:last-child > td').css({
+                    $('#summary tr:last-child > td').css({
                         "border-top": "1px solid darkgray",
                         "font-weight" : "bold"
                     });
                     $("#summary table").attr("border", "0");
+
+                    numSickle = $("#summary tr:nth-child(2) > td").last().text()
+                    if (numSickle == "None") {
+                        $("#rec").html("<text style='color:green; font-weight:bold'>No sickle cells detected.</text>")
+                    } else {
+                        $("#rec").html("<text style='color:red;font-weight:bold'>Sickle cells detected. </text><br> Please consult with your doctor.")
+                    }
                 });
               
             });
